@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body>
 
+<body>
     
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark center text-center">
         <div class="container-fluid">
@@ -25,7 +25,7 @@
                 <a class="nav-link" href="#">Comunidad</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Soporte</a>
+                <a class="nav-link" href="formulario.html">Custom</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Acerca de</a>
@@ -33,29 +33,108 @@
             </ul>
           </div>
 
-          <div class="justify-content-and " href="#">
-            <img src="C:\Users\zente\OneDrive\Escritorio\Financiero-LandingPage\assets\icons\perfil.png" alt="" width="60" height="60" class=" me-3">
-            <img src="C:\Users\zente\OneDrive\Escritorio\Financiero-LandingPage\assets\icons\carrito_compras.png" alt="" width="60" height="60" class=" me-5">
+          <div class="justify-content-and" href="#">
+            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\icons\perfil.png" alt="" width="60" height="60" class="me-3">
+            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\icons\carrito_compras.png" alt="" width="60" height="60" class="me-5" data-bs-toggle="modal" data-bs-target="#carritoModal">
           </div>
-        </div>
+          
       </nav>
 
 
-      <div>
-
+      <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="carritoModalLabel">Carrito de Ventas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- Contenido del carrito -->
+              <ul id="carritoItems">
+                <li>
+                  <div class="producto-carrito">
+                    <img src="assets\PCS\pc7.jpg" alt="Producto 1" class="producto-imagen" width="200" height="200">
+                    <div class="producto-info">
+                      <h6 class="producto-nombre">Producto 1</h6>
+                      <p class="producto-descripcion">Descripción breve del Producto 1...</p>
+                    </div>
+                    <button class="btn btn-danger btn-eliminar" onclick="eliminarProducto(1)">Eliminar</button>
+                  </div>
+                </li>
+                <li>
+                  <div class="producto-carrito">
+                    <img src="assets\PCS\pc2.jpg" alt="Producto 2" class="producto-imagen" width="200" height="200">
+                    <div class="producto-info">
+                      <h6 class="producto-nombre">Producto 2</h6>
+                      <p class="producto-descripcion">Descripción breve del Producto 2...</p>
+                    </div>
+                    <button class="btn btn-danger btn-eliminar" onclick="eliminarProducto(2)">Eliminar</button>
+                  </div>
+                </li>
+                <!-- Agregar más productos aquí -->
+              </ul>
+              <p>Total: <span id="totalPrecio">$450</span></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button class="btn btn-primary">Realizar Compra</button>
+            </div>
+          </div>
+        </div>
       </div>
+      
 
 
       <div class="container mt-5">
         <div class="row">
           <div class="col-lg-4">
             <div class="card mb-4 bg-dark">
-              <img src="ruta_de_la_imagen.jpg" class="card-img-top" alt="Producto 1">
+              <img src="assets\PCS\pc1.jpg" class="card-img-top" alt="Producto 1" width="400" height="400">
               <div class="card-body text-light">
-                <h5 class="card-title">Producto 1</h5>
-                <p class="card-text">Descripción del Producto 1 con algunas especificaciones.</p>
+                <h5 class="card-title">Xtreme PC Gamer Geforce RTX 3060 Intel Core I7 10700F 16GB SSD 500GB HDD 2TB ARGB</h5>
+                <p class="card-text">Potencia y estilo se unen en la Xtreme PC Gamer con la gráfica GeForce RTX 3060, el procesador Intel Core i7 10700F y los efectos ARGB personalizables. </p>
                 <div class="text-center">
+
+                  <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Especificaciones
+                  </button>
+                  <!-- modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-dark" id="exampleModalLabel">Especificaciones de la PC</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card">
+                            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\PCS\pc2.jpg" class="card-img-top" alt="Imagen de la PC">
+                            <div class="card-body ">
+                              <ul class="text-dark">
+                                <li><strong>Procesador:</strong> Intel Core i7-13900</li>
+                                <li><strong>Memoria RAM:</strong> 8 GB DDR4</li>
+                                <li><strong>Disco Duro:</strong> 512 GB SSD</li>
+                                <li><strong>Tarjeta Gráfica:</strong> NVIDIA GeForce GTX 2060 super</li>
+                                <li><strong>Sistema Operativo:</strong> Windows 10</li>
+                              </ul>
+                              <p  class="text-dark">
+                                ¡Descubre la potencia y el rendimiento excepcional de nuestra PC de última generación! Diseñada para superar tus expectativas, esta poderosa máquina está equipada con un procesador Intel Core i7-XXXXX que proporciona velocidades de ejecución impresionantes.
+                                 Acompañada de 8 GB de memoria RAM DDR4, podrás realizar multitareas sin esfuerzo, sin importar la complejidad de tus proyectos.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button class="btn btn-primary">Agregar al carrito</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
                   <p class="card-text">Desde $$$$.</p>
+                  
                   <button class="btn btn-primary">Comprar</button>
                   <button class="btn btn-secondary">Agregar al carrito</button>
                 </div>
@@ -65,11 +144,49 @@
     
           <div class="col-lg-4">
             <div class="card mb-4 bg-dark">
-              <img src="ruta_de_la_imagen.jpg" class="card-img-top" alt="Producto 2">
-              <div class="card-body text-light">
-                <h5 class="card-title">Producto 2</h5>
-                <p class="card-text">Descripción del Producto 2 con algunas especificaciones.</p>
+              <img src="assets\PCS\pc2.jpg" class="card-img-top" alt="Producto 2" width="400" height="400">
+              <div class="card-body text-light" >
+                <h5 class="card-title">Computadora Gamer Xtreme PC Gaming CM-91029, AMD Ryzen 5 5600G 3.90GHz, 8GB, 240GB SSD, Wi-Fi</h5>
+                <p class="card-text">Domina el gaming con la Xtreme PC Gamer, equipada con la formidable GeForce RTX 3060 y el impresionante Intel Core i7 10700F</p>
                 <div class="text-center">
+
+                  <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    Especificaciones
+                  </button>
+                  <!-- modal -->
+                  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-dark" id="exampleModalLabel">Especificaciones de la PC</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card">
+                            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\PCS\pc3.jpg" class="card-img-top" alt="Imagen de la PC">
+                            <div class="card-body ">
+                              <ul class="text-dark">
+                                <li><strong>Procesador:</strong> Intel Core i7-13900</li>
+                                <li><strong>Memoria RAM:</strong> 8 GB DDR4</li>
+                                <li><strong>Disco Duro:</strong> 512 GB SSD</li>
+                                <li><strong>Tarjeta Gráfica:</strong> NVIDIA GeForce GTX 2060 super</li>
+                                <li><strong>Sistema Operativo:</strong> Windows 10</li>
+                              </ul>
+                              <p  class="text-dark">
+                                ¡Descubre la potencia y el rendimiento excepcional de nuestra PC de última generación! Diseñada para superar tus expectativas, esta poderosa máquina está equipada con un procesador Intel Core i7-XXXXX que proporciona velocidades de ejecución impresionantes.
+                                 Acompañada de 8 GB de memoria RAM DDR4, podrás realizar multitareas sin esfuerzo, sin importar la complejidad de tus proyectos.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button class="btn btn-primary">Agregar al carrito</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <p class="card-text">Desde $$$$.</p>
                   <button class="btn btn-primary">Comprar</button>
                   <button class="btn btn-secondary">Agregar al carrito</button>
@@ -80,11 +197,49 @@
 
           <div class="col-lg-4">
             <div class="card mb-4 bg-dark">
-              <img src="ruta_de_la_imagen.jpg" class="card-img-top" alt="Producto 1">
+              <img src="https://m.media-amazon.com/images/I/71OFKtclW4L._AC_SX522_.jpg" class="card-img-top" alt="Producto 1" width="400" height="400">
               <div class="card-body text-light">
                 <h5 class="card-title">Producto 3</h5>
                 <p class="card-text">Descripción del Producto 1 con algunas especificaciones.</p>
                 <div class="text-center">
+
+                  <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                    Especificaciones
+                  </button>
+                  <!-- modal -->
+                  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-dark" id="exampleModalLabel">Especificaciones de la PC</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card">
+                            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\PCS\pc4.jpg" class="card-img-top" alt="Imagen de la PC">
+                            <div class="card-body ">
+                              <ul class="text-dark">
+                                <li><strong>Procesador:</strong> Intel Core i7-13900</li>
+                                <li><strong>Memoria RAM:</strong> 8 GB DDR4</li>
+                                <li><strong>Disco Duro:</strong> 512 GB SSD</li>
+                                <li><strong>Tarjeta Gráfica:</strong> NVIDIA GeForce GTX 2060 super</li>
+                                <li><strong>Sistema Operativo:</strong> Windows 10</li>
+                              </ul>
+                              <p  class="text-dark">
+                                ¡Descubre la potencia y el rendimiento excepcional de nuestra PC de última generación! Diseñada para superar tus expectativas, esta poderosa máquina está equipada con un procesador Intel Core i7-XXXXX que proporciona velocidades de ejecución impresionantes.
+                                 Acompañada de 8 GB de memoria RAM DDR4, podrás realizar multitareas sin esfuerzo, sin importar la complejidad de tus proyectos.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button class="btn btn-primary">Agregar al carrito</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <p class="card-text">Desde $$$$.</p>
                   <button class="btn btn-primary">Comprar</button>
                   <button class="btn btn-secondary">Agregar al carrito</button>
@@ -95,11 +250,49 @@
 
           <div class="col-lg-4">
             <div class="card mb-4 bg-dark">
-              <img src="ruta_de_la_imagen.jpg" class="card-img-top" alt="Producto 1">
+              <img src="https://www.cyberpuerta.mx/img/product/M/CP-XTREMEPCGAMING-XPXPR516GB3060W-1.jpgruta_de_la_imagen.jpg" class="card-img-top" alt="Producto 1" width="400" height="400">
               <div class="card-body text-light">
                 <h5 class="card-title">Producto 4</h5>
                 <p class="card-text">Descripción del Producto 1 con algunas especificaciones.</p>
                 <div class="text-center">
+
+                  <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+                    Especificaciones
+                  </button>
+                  <!-- modal -->
+                  <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-dark" id="exampleModalLabel">Especificaciones de la PC</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card">
+                            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\PCS\pc7.jpg" class="card-img-top" alt="Imagen de la PC">
+                            <div class="card-body ">
+                              <ul class="text-dark">
+                                <li><strong>Procesador:</strong> Intel Core i7-13900</li>
+                                <li><strong>Memoria RAM:</strong> 8 GB DDR4</li>
+                                <li><strong>Disco Duro:</strong> 512 GB SSD</li>
+                                <li><strong>Tarjeta Gráfica:</strong> NVIDIA GeForce GTX 2060 super</li>
+                                <li><strong>Sistema Operativo:</strong> Windows 10</li>
+                              </ul>
+                              <p  class="text-dark">
+                                ¡Descubre la potencia y el rendimiento excepcional de nuestra PC de última generación! Diseñada para superar tus expectativas, esta poderosa máquina está equipada con un procesador Intel Core i7-XXXXX que proporciona velocidades de ejecución impresionantes.
+                                 Acompañada de 8 GB de memoria RAM DDR4, podrás realizar multitareas sin esfuerzo, sin importar la complejidad de tus proyectos.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button class="btn btn-primary">Agregar al carrito</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <p class="card-text">Desde $$$$.</p>
                   <button class="btn btn-primary">Comprar</button>
                   <button class="btn btn-secondary">Agregar al carrito</button>
@@ -110,11 +303,102 @@
           
           <div class="col-lg-4">
             <div class="card mb-4 bg-dark ">
-              <img src="ruta_de_la_imagen.jpg" class="card-img-top" alt="Producto 1">
+              <img src="https://www.cyberpuerta.mx/img/product/M/CP-XTREMEPCGAMING-XTMSIR516GB6500XT-65265a.jpg" class="card-img-top" alt="Producto 1" width="400" height="400">
               <div class="card-body text-light">
                 <h5 class="card-title">{product.name}</h5>
                 <p class="card-text">Descripción del Producto 1 con algunas especificaciones.</p>
                 <div class="text-center">
+
+                  <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                    Especificaciones
+                  </button>
+                  <!-- modal -->
+                  <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-dark" id="exampleModalLabel">Especificaciones de la PC</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card">
+                            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\PCS\pc5.jpg" class="card-img-top" alt="Imagen de la PC">
+                            <div class="card-body ">
+                              <ul class="text-dark">
+                                <li><strong>Procesador:</strong> Intel Core i7-13900</li>
+                                <li><strong>Memoria RAM:</strong> 8 GB DDR4</li>
+                                <li><strong>Disco Duro:</strong> 512 GB SSD</li>
+                                <li><strong>Tarjeta Gráfica:</strong> NVIDIA GeForce GTX 2060 super</li>
+                                <li><strong>Sistema Operativo:</strong> Windows 10</li>
+                              </ul>
+                              <p  class="text-dark">
+                                ¡Descubre la potencia y el rendimiento excepcional de nuestra PC de última generación! Diseñada para superar tus expectativas, esta poderosa máquina está equipada con un procesador Intel Core i7-XXXXX que proporciona velocidades de ejecución impresionantes.
+                                 Acompañada de 8 GB de memoria RAM DDR4, podrás realizar multitareas sin esfuerzo, sin importar la complejidad de tus proyectos.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button class="btn btn-primary">Agregar al carrito</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="card-text">Desde $$$$.</p>
+                  <button class="btn btn-primary">Comprar</button>
+                  <button class="btn btn-secondary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card mb-4 bg-dark ">
+              <img src="https://www.cyberpuerta.mx/img/product/M/CP-XTREMEPCGAMING-XTBRR716GBRENOIR-7aec12.jpg" class="card-img-top" alt="Producto 1" width="400" height="400">
+              <div class="card-body text-light">
+                <h5 class="card-title">{product.name}</h5>
+                <p class="card-text">Descripción del Producto 1 con algunas especificaciones.</p>
+                <div class="text-center">
+
+                  <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+                    Especificaciones
+                  </button>
+                  <!-- modal -->
+                  <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-dark" id="exampleModalLabel">Especificaciones de la PC</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card">
+                            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\PCS\pc7.jpg" class="card-img-top" alt="Imagen de la PC">
+                            <div class="card-body ">
+                              <ul class="text-dark">
+                                <li><strong>Procesador:</strong> Intel Core i7-13900</li>
+                                <li><strong>Memoria RAM:</strong> 8 GB DDR4</li>
+                                <li><strong>Disco Duro:</strong> 512 GB SSD</li>
+                                <li><strong>Tarjeta Gráfica:</strong> NVIDIA GeForce GTX 2060 super</li>
+                                <li><strong>Sistema Operativo:</strong> Windows 10</li>
+                              </ul>
+                              <p  class="text-dark">
+                                ¡Descubre la potencia y el rendimiento excepcional de nuestra PC de última generación! Diseñada para superar tus expectativas, esta poderosa máquina está equipada con un procesador Intel Core i7-XXXXX que proporciona velocidades de ejecución impresionantes.
+                                 Acompañada de 8 GB de memoria RAM DDR4, podrás realizar multitareas sin esfuerzo, sin importar la complejidad de tus proyectos.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button class="btn btn-primary">Agregar al carrito</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <p class="card-text">Desde $$$$.</p>
                   <button class="btn btn-primary">Comprar</button>
                   <button class="btn btn-secondary">Agregar al carrito</button>

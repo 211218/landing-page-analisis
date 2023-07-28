@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark center text-center">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-5 my-3 fs-3 fw-bold" href="#">SUPER PC</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse center justify-content-center " id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Comunidad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Custom</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Acerca de</a>
+              </li>
+            </ul>
+          </div>
+
+          
+
+          <div class="justify-content-and" href="#">
+            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\icons\perfil.png" alt="" width="60" height="60" class="me-3">
+            <img src="C:\Users\zente\OneDrive\Escritorio\Main\assets\icons\carrito_compras.png" alt="" width="60" height="60" class="me-5" data-bs-toggle="modal" data-bs-target="#carritoModal2">
+          </div>
+          
+      </nav>
+
+      
+
+
+
+
+
+
+
+
+      <body>
+
+        <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="carritoModalLabel">Carrito de Ventas</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Contenido del carrito -->
+                  <ul id="carritoItems">
+                    <li>
+                      <div class="producto-carrito">
+                        <img src="assets\PCS\pc7.jpg" alt="Producto 1" class="producto-imagen" width="200" height="200">
+                        <div class="producto-info">
+                          <h6 class="producto-nombre">Xtreme PC Gamer Geforce RTX 3060 Intel Core I7 10700F 16GB SSD 500GB HDD 2TB ARGB</h6>
+                          <p class="producto-descripcion">Descripción breve del Producto 1...</p>
+                        </div>
+                        <button class="btn btn-danger btn-eliminar" onclick="eliminarProducto(1)">Eliminar</button>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="producto-carrito">
+                        <img src="assets\PCS\pc2.jpg" alt="Producto 2" class="producto-imagen" width="200" height="200">
+                        <div class="producto-info">
+                          <h6 class="producto-nombre">Producto 2</h6>
+                          <p class="producto-descripcion">Descripción breve del Producto 2...</p>
+                        </div>
+                        <button class="btn btn-danger btn-eliminar" onclick="eliminarProducto(2)">Eliminar</button>
+                      </div>
+                    </li>
+                    <!-- Agregar más productos aquí -->
+                  </ul>
+                  <p>Total: <span id="totalPrecio">$450</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button class="btn btn-primary">Realizar Compra</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        <div class="container my-5">
+          <h1 class="display-4 text-center mb-4">PC Personalizada</h1>
+          <form>
+            <div class="mb-3">
+              <label for="ram" class="form-label">Memoria RAM</label>
+              <select class="form-select" id="ram">
+                <option value="4">4 GB a 2666MHz</option>
+                <option value="8">8 GB a 2666MHz</option>
+                <option value="16">16 GB a 2666MHz</option>
+                <!-- Agregar más opciones según los modelos de RAM que ofrezcas -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="procesador" class="form-label">Procesador</label>
+              <select class="form-select" id="procesador">
+                <option value="i3">Intel Core i3</option>
+                <option value="i5">Intel Core i5</option>
+                <option value="ryzen3">AMD Ryzen 3</option>
+                <!-- Agregar más opciones según los modelos de procesadores que ofrezcas -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="disco-duro" class="form-label">Disco Duro (HDD)</label>
+              <select class="form-select" id="disco-duro">
+                <option value="500">500 GB</option>
+                <option value="1000">1 TB (1000 GB)</option>
+                <option value="2000">2 TB (2000 GB)</option>
+                <!-- Agregar más opciones según las capacidades de HDD que ofrezcas -->
+              </select>
+            </div>
+            <div class="mb-3">
+                <label for="disco-duro" class="form-label">Disco De estado Sólido SSD (Opcional)</label>
+                <select class="form-select" id="disco-duro">
+                  <option value="500">500 GB</option>
+                  <option value="1000">1 TB (1000 GB)</option>
+                  <option value="2000">2 TB (2000 GB)</option>
+                  <!-- Agregar más opciones según las capacidades de HDD que ofrezcas -->
+                </select>
+              </div>
+            <div class="mb-3">
+              <label for="tarjeta-grafica" class="form-label">Tarjeta Gráfica</label>
+              <select class="form-select" id="tarjeta-grafica">
+                <option value="integrada">Gráficos Integrados</option>
+                <option value="nvidia-gtx">NVIDIA GTX 1650</option>
+                <option value="amd-rx">AMD Radeon RX 5500</option>
+                <!-- Agregar más opciones según las tarjetas gráficas que ofrezcas -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="placa-madre" class="form-label">Placa Madre</label>
+              <select class="form-select" id="placa-madre">
+                <option value="b450">ASUS B450</option>
+                <option value="h310">Gigabyte H310</option>
+                <option value="x570">MSI X570</option>
+                <!-- Agregar más opciones según las placas madre que ofrezcas -->
+              </select>
+            </div>
+            <!-- Agregar más campos según los componentes de la PC que ofrezcas -->
+            <button type="submit" class="btn btn-primary">Generar Presupuesto</button>
+          </form>
+      
+          <!-- Descripción de qué se puede hacer con el formulario -->
+          <div class="mt-5">
+            <h3>¿Qué puedes hacer con este formulario?</h3>
+            <p>Con este formulario, puedes personalizar tu PC seleccionando los componentes que más se ajusten a tus necesidades. Puedes elegir la cantidad de memoria RAM, el procesador, el disco duro (HDD), la tarjeta gráfica y la placa madre que deseas incluir en tu PC. Después de seleccionar los componentes, simplemente haz clic en el botón "Enviar Presupuesto" para obtener un presupuesto personalizado para tu PC soñada.</p>
+            <p>todo los componentes extra como gabinetes, sistemas de enfriamiento serán cotizados de manera directa con el vendedor</p>
+        </div>
+        </div>
+
+        <h2 class="display-4 text-center mb-4">Costo total: 00.00</h2>
+      
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+          integrity="sha384-d8dyEXmZjsV6WwGQzD6vp/XbYoZC1AGhVxE4Ii26Byc2MHkIjGzNT3/EUvXIsGkC" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+          integrity="sha384-oqVuZHRfzGL8KzS9yeCYe4mHA7HSPYk1Skg/dGn7jIyqtqETxuJzuMjImLPpjWoO" crossorigin="anonymous"></script>
+      </body>
+      
+
+</html>
